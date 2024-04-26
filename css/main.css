@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+.header {
+  background-image: linear-gradient(to left, #313980, #e732ba);
+  grid-area: encabezado;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30vh;
+  margin-bottom: 10px;
+  padding: 10px 20px; }
+  .header .header__titulo {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center; }
+    .header .header__titulo .header__logo {
+      display: inline-block;
+      border-radius: 5px 30px 45px 60px;
+      margin-top: 20px; }
+
+.social {
+  padding: auto;
+  width: 50px;
+  position: absolute;
+  top: auto;
+  right: 20px; }
+  .social ul {
+    list-style: none;
+    padding: 1rem;
+    flex-direction: column; }
+  .social li {
+    transition: all 0,5s ease; }
+    .social li a {
+      color: blanchedalmond;
+      text-decoration: none;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 1.5rem; }
+    .social li:hover {
+      transform: scale 1.4; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.texto {
+  color: white; }
+
+.titulo {
+  text-align: center;
+  margin-bottom: 30px; }
+
+.parrafo {
+  background-image: linear-gradient(to left, #a81515, #a9c725);
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: larger;
+  color: black; }
+
+.footer__creditos {
+  padding-top: 10px;
+  height: 50px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  background-color: black; }
+
+.card__imagen1 {
+  height: 200px;
+  width: 200px;
+  background-color: darkkhaki;
+  border: solid 7px #110c57;
+  display: inline-block;
+  transform: skewY(5deg); }
+
+.icon-social, .btn--facebook, .btn--instagram, .btn--whatsapp {
+  font-size: 1.5rem;
+  padding: 1.5rem; }
+
+/*Creamos el bucle para usar los valores del mapa*/
+.btn--facebook {
+  background-color: blue; }
+
+.btn--instagram {
+  background-color: gray; }
+
+.btn--whatsapp {
+  background-color: green; }
