@@ -1,22 +1,22 @@
 document.getElementById('estudianteForm').addEventListener('submit', function(event) {
         event.preventDefault();
         
-        var nombre = document.getElementById('nombre').value;
-        var documento = document.getElementById('documento').value;
-        var nota1 = parseFloat(document.getElementById('nota1').value);
-        var nota2 = parseFloat(document.getElementById('nota2').value);
-        var nota3 = parseFloat(document.getElementById('nota3').value);
+        let nombre = document.getElementById('nombre').value;
+        let documento = document.getElementById('documento').value;
+        let nota1 = parseFloat(document.getElementById('nota1').value);
+        let nota2 = parseFloat(document.getElementById('nota2').value);
+        let nota3 = parseFloat(document.getElementById('nota3').value);
         
-        var promedio = calcularPromedio([nota1, nota2, nota3]);
+        let promedio = calcularPromedio([nota1, nota2, nota3]);
         
-        var estu = {
+        let estu = {
           nombre: nombre,
           documento: documento,
           notas: [nota1, nota2, nota3],
           promedio: promedio
         };
         
-        var agenda = JSON.parse(localStorage.getItem('agenda')) || [];
+        let agenda = JSON.parse(localStorage.getItem('agenda')) || [];
         agenda.push(estu);
         localStorage.setItem('agenda', JSON.stringify(agenda));
         
@@ -38,17 +38,17 @@ document.getElementById('estudianteForm').addEventListener('submit', function(ev
       });
       
       function mostrarAgenda() {
-        var agenda = JSON.parse(localStorage.getItem('agenda')) || [];
-        var aprobadosList = document.getElementById('aprobados-list');
-        var desaprobadosList = document.getElementById('desaprobados-list');
+        let agenda = JSON.parse(localStorage.getItem('agenda')) || [];
+        let aprobadosList = document.getElementById('aprobados-list');
+        let desaprobadosList = document.getElementById('desaprobados-list');
         aprobadosList.innerHTML = '';
         desaprobadosList.innerHTML = '';
         
         agenda.forEach(function(estu, index) {
-          var li = document.createElement('li');
+          let li = document.createElement('li');
           li.innerHTML = '<strong>' + estu.nombre + '</strong> - documento: ' + estu.documento + ' - Promedio de notas: ' + estu.promedio;
           
-          var button = document.createElement('button');
+          let button = document.createElement('button');
           button.textContent = 'Eliminar';
           button.addEventListener('click', function() {
             eliminarContacto(index);
@@ -64,7 +64,7 @@ document.getElementById('estudianteForm').addEventListener('submit', function(ev
       }
       
       function eliminarContacto(index) {
-        var agenda = JSON.parse(localStorage.getItem('agenda')) || [];
+        let agenda = JSON.parse(localStorage.getItem('agenda')) || [];
         agenda.splice(index, 1);
         localStorage.setItem('agenda', JSON.stringify(agenda));
         Swal.fire({
@@ -78,7 +78,7 @@ document.getElementById('estudianteForm').addEventListener('submit', function(ev
       }
       
       function calcularPromedio(notas) {
-        var sum = notas.reduce(function(acc, val) 
+        let sum = notas.reduce(function(acc, val) 
         {
           return acc + val;
         }, 0);
